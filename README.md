@@ -66,10 +66,15 @@ Everyone review staging into main. Won't merge our own code. At the end of the d
 
 # Project Prep 2
 Summary:
+
 A dating app where users are able to create a user, log in, and are able to see/find matches with other people. Able to list interests for others to see.
+
 Problem Pain
+
 GIT Date is a break from traditional dating. Our app provides a more efficient and faster method to matching than traditional dating. Being able to match with people who have similar/common interest.
-Minimum Viable Product (MVP)
+
+Minimum Viable Product (MVP):
+
 Create a user, log in, user able to create a post of their interest, users are able to interact with each other.
 
 
