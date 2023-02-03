@@ -1,9 +1,8 @@
+# Collaborators
 
+Devon, Sharmarke, Ryan, Adrian
 
-
-
-
-
+GIT- Date is an app for those in the tech world for them to connect with each other and see a a list of interests that they have and match with them.
 
 # project-prep
 
