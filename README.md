@@ -206,6 +206,88 @@ Use an auto logout feature that logs a user out if they have not been active for
 
 Design CSS animation.
 
+What is the vision of this product?
+
+The vision of this project is to create a dating app, where users may quickly and efficiently find matches to potential love interests. A user may add and remove preferences of what they are looking for in a person. A user may also add and remove matches, as well as send and receive messages from other users they matched with. 
+
+What pain point does this project solve?
+
+The pain point this project solves is preventing the user from having to date the “old fashioned” way. Instead of having to go out to an event to meet people, users may connect with users who are ready and willing. Users also may see if they have common interests with other users before matching as well as be able to see a picture of them. 
+
+Why should we care about your product?
+
+You should care about our project because connection is important. A lot of people are looking for a genuine connection, but struggle with the process of finding a compatible person to date. Our app simplifies that process, while taking some of the guesswork out of the process. 
+
+Scope (In/Out)
+
+IN 
+
+Users will be able to create a dating profile with their dating preferences. 
+
+Users will be able to look through a list of other users, and match with users they are interested in.
+
+Users will be able to message and receive messages from matched users. 
+
+Users will be able to delete/remove matched users. 
+
+OUT 
+
+Site will not be a mobile app.
+
+Site won’t be permissible to users under 18 years of age. 
+
+Minimum Viable Product 
+
+What will your MVP functionality be?
+
+Users may create a dating profile
+
+Users may set preferences for who they would like to match with
+
+Users will be able to match with other users
+
+Users will be able to message matched users
+
+Users will be able to delete matched users
+
+What are your stretch goals?
+
+Users may have multiple pictures. 
+
+Ability to comment on other users pictures
+
+Random date
+
+Auto Logout
+
+Functional Requirements
+
+An admin can create and delete user accounts
+
+A user can update their profile information
+
+A user can search for potential matches based on their preferences
+
+A user may message with other matched users
+
+Data Flow
+
+Users come to the site and are prompted to log in or register. Upon registration, the user inputs personal information, including a username, password, and their name, as well as preferences based on what they are looking for in the dating app. Age will be verified, ensuring only users who are 18 or above can register for the site. After registration, users will be taken to their homepage where they can view and update their information. From there a user will be able to view a list of potential matches based on their profile preferences. If two users match with each other, they will be able to exchange messages with one another as well as delete messages. Users then will be able to delete users. Users may then log out of the site. 
+
+Non-Functional Requirements 
+
+Non-functional requirements are requirements that are not directly related to the functionality of the application but still important to the app.
+
+Examples include:
+
+Spring Security is used for authentication, protection from cross site scripting, and giving users access only to information they are authorized to view or manipulate.
+
+Usability/Accessibility ensuring this app is able to be used by everyone is of age to date. App will be clean, as well as friendly for use of any race, gender, ethnic background, and sexual preference. 
+
+Testability/ Get/Put functions unit tests, within the app.
+
+Ease of use
+
 
 ## WireFrame
 <img width="513" alt="Screenshot 2023-02-03 at 5 28 53 PM" src="https://user-images.githubusercontent.com/115438182/216739209-67984d03-f8ca-44ee-b624-8702f0ebdbb8.png">
