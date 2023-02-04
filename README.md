@@ -87,6 +87,8 @@ Create a user, log in, user able to create a post of their interest, users are a
 
 <img width="513" alt="Screenshot 2023-02-03 at 5 28 53 PM" src="https://user-images.githubusercontent.com/115438182/216739209-67984d03-f8ca-44ee-b624-8702f0ebdbb8.png">
 
+## Data Base
 <img width="473" alt="Screenshot 2023-02-03 at 5 31 21 PM" src="https://user-images.githubusercontent.com/115438182/216739215-791240ef-5425-4c5b-903e-751f4e8c7d89.png">
 
+## Schema
 <img width="376" alt="Screenshot 2023-02-03 at 5 31 40 PM" src="https://user-images.githubusercontent.com/115438182/216739221-3382a52d-737b-49d9-9195-12450638e5b7.png">
