@@ -94,79 +94,129 @@ GIT- Date is an app for those in the tech world for them to connect with each ot
 What problem or pain point does it solve? a. Keep it high level without going into too much detail. (3-4 sentences is enough)
 Our application makes it easy for an individual to meet other singles via an online application. It takes away the need to meet someone in person first in order to get to know them. This gives you the chance to get to know someone before you commit to an actual meetup in person. It also helps you find people with similar interests so it makes looking for someone with those interests a little easier.
 
-## User Story #1
+### User Story #1
 
 Create User 
+
 As a user, I want to be able to create my own personal profile.
+
 Feature Tasks
+
 User can fill out their profile information with a form from a signup page
+
 Profile information will be username, Password, firstName, lastName, Age, Bio, Interests, Gender, profileImage. 
+
 User will be able to upload their own profile picture 
- Acceptance Tests
+
+Acceptance Tests
+
 Ensure that the signup form generates and is fillable.
+
 Ensure that user’s entries are saved and visible on the profile page.
+
 Ensure that it is added to the PGAdmin DB.
 
  Stretch Goal
+ 
 Users can add additional photos that display their personal interests.
+
 Design CSS animation.
 
-## User Story #2
+### User Story #2
 
 Create Post 
+
 As a user I would like to add a post.
+
 Feature Tasks
+
  Able to add a post to their own page
+ 
 Acceptance Tests
+
 Ensure the post is displayed on the user's profile page.
+
  Ensure the results are accurate.
+ 
 Stretch Goal
+
 Edit post.
+
 Add post/reply to others pages.
-## User Story #3
+
+### User Story #3
 
 Finding a match
+
  As a user I would like to see what other users are using the app for dating that I have similar interests with.
+ 
  Feature Tasks
+ 
 Able to see a list of users that are using the app.
+
 Allow users to filter the list of users based on certain user characteristics.
+
 Allow users to see who they’ve matched with.
+
  Acceptance Tests
+ 
 Ensure that a list of users is generated on a page. 	
+
 Ensure that the filter button works.
+
 Ensure that matches are shown on user profile.
+
  Stretch Goal
+ 
 Match a user with another user based on their interests (Random Date).
+
 Design CSS animation.
 
-## User Story #4
+### User Story #4
 
  Messaging a Match 
+ 
 As a user, I would like to message a user I have matched with.
 
 Feature Tasks
+
  Users are able to send direct messages to one another.
+ 
 Only matched users are able to view their unique conversation.
--  Acceptance Tests
+
+Acceptance Tests
+
  Ensure that the user can view messages from matched users.
+ 
 Ensure that only matched users can message one another.
 
 
-## User Story #5
+### User Story #5
 
 Log out
+
 As a user I would like the ability to log out of my profile.
+
 Feature Tasks
+
 GIve users the ability to log out of their profile.
+
 Provide a clickable button that logs users out of their profile.
+
  Acceptance Tests
+ 
 Ensure the user is able to logout of their profile with the click of a button.
+
  Ensure that the user is not able to access their profile while logged out.
+ 
  Stretch Goal
+ 
 Use an auto logout feature that logs a user out if they have not been active for a certain amount of time.
+
 Design CSS animation.
 
 
+## WireFrame
 <img width="513" alt="Screenshot 2023-02-03 at 5 28 53 PM" src="https://user-images.githubusercontent.com/115438182/216739209-67984d03-f8ca-44ee-b624-8702f0ebdbb8.png">
 
 ## Data Base
