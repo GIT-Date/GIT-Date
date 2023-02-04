@@ -84,15 +84,6 @@ Minimum Viable Product (MVP):
 Create a user, log in, user able to create a post of their interest, users are able to interact with each other.
 
 ## Project Prep 4
-# Collaborators
-Devon, Sharmarke, Ryan, Adrian
- 
-## Description
-
-GIT- Date is an app for those in the tech world for them to connect with each other and see a list of interests that they have and match with them.
-
-What problem or pain point does it solve? a. Keep it high level without going into too much detail. (3-4 sentences is enough)
-Our application makes it easy for an individual to meet other singles via an online application. It takes away the need to meet someone in person first in order to get to know them. This gives you the chance to get to know someone before you commit to an actual meetup in person. It also helps you find people with similar interests so it makes looking for someone with those interests a little easier.
 
 ### User Story #1
 
