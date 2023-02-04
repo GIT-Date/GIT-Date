@@ -2,7 +2,7 @@
 
 Devon, Sharmarke, Ryan, Adrian
 
-GIT- Date is an app for those in the tech world for them to connect with each other and see a a list of interests that they have and match with them.
+GIT- Date is an app for those in the tech world for them to connect with each other and see a a list of interests that they have and match with them. Our application makes it easy for an individual to meet other singles via an online application. It takes away the need to meet someone in person first in order to get to know them. This gives you the chance to get to know someone before you commit to an actual meetup in person. It also helps you find people with similar interests so it makes looking for someone with those interests a little easier.
 
 # project-prep
 
