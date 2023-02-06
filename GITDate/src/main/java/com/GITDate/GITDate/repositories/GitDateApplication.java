@@ -1,4 +1,4 @@
 package com.GITDate.GITDate.repositories;
 
-public class repo {
+public class GitDateApplication {
 }
