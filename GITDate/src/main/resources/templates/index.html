@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home Page</title>
 </head>
 <body>
+<h1>Let's GIT you a date &#128151</h1>
+
+<h3 th:if="${username}" th:text="${'Hello ' + FirstName}"></h3>
+<a th:if="${username}" href="/logout">Logout</a>
+<a th:if="!${username}" href="/login">Log In</a>
+<br>
+<a th:if="!${username}" href="/signup">Sign Up</a>
 
 </body>
 </html>

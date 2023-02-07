@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Likes</title>
+</head>
+<body>
+
+<form th:action="${'/like-user/' + viewUserId}" th:method="PUT">
+    <input type="hidden" th:value="${viewUsername}">
+    <input type="submit" value="Like User" th:disabled="${authUserName.equals(viewUserName)}">
+</form>
+
+<h2>Users I Like</h2>
+<ul th:each="likedUser : ${usersIlike}">
+    <li th:text="${likedUser.username}"></li>
+</ul>
+
+<h2>Who likes me</h2>
+<ul th:each="userThatLikes : ${usersWhoLikeMe}">
+    <li th:text="${userThatLikes.username}"></li>
+</ul>
+</body>
+</html>
