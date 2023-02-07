@@ -12,24 +12,24 @@
 
 <!--<div th:replace="/fragments/error-frag :: user-error"></div>-->
 
-<h1 th:text="${'User info for user id: ' + viewUserFirstName}"></h1>
+<h1 th:text="${'User info for user id: ' + viewUser.username}"></h1>
 
-<form th:action="${'/user/' + viewUserId}" th:method="PUT">
+<form th:action="${'/user/' + viewUser.id}" th:method="PUT">
     <label for="username"> Username</label>
 
-    <input th:value="${viewUserName}" type="text" name="username"
-           th:disabled="${!authUserName.equals(viewUserName)}"/>
+    <input th:value="${viewUser.username}" type="text" name="username"
+           th:disabled="${!authUser.username.equals(viewUser.username)}"/>
 
     <label for="firstName">First Name</label>
 
-    <input th:value="${viewUserFirstName}" type="text" name="firstName"
-           th:disabled="${!authUserName.equals(viewUserName)}"/>
+    <input th:value="${viewUser.firstName}" type="text" name="firstName"
+           th:disabled="${!authUser.username.equals(viewUser.username)}"/>
     <input type="submit" value="Edit User Info"/>
 </form>
 
-<form th:action="${'/liked-user/' + viewUserId}" th:method="PUT">
-    <input type="hidden" th:value="${viewUsername}">
-    <input type="submit" value="Like User" th:disabled="${authUserName.equals(viewUserName)}">
+<form th:action="${'/liked-user/' + viewUser.id}" th:method="PUT">
+    <input type="hidden" th:value="${viewUser.username}">
+    <input type="submit" value="Like User" th:disabled="${authUser.username.equals(viewUser.username)}">
 </form>
 </body>
 </html>
