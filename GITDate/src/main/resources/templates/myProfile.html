@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MY PROFILE</title>
 </head>
 <body>
 
+<h1 th:text="${'Hello, ' + authUser.username + '. Welcome to your profile!'}"></h1>
+<img src="https://via.placeholder.com/150 "/>
+
+
+<h2 th:text="${'Username: ' + authUser.username}"></h2>
+<h2 th:text="${'First Name: ' + authUser.firstName}"></h2>
+<h2 th:text="${'Last Name: ' + authUser.lastName}"></h2>
+<h2 th:text="${'Age: ' + authUser.age}"></h2>
+<h2 th:text="${'Bio: ' + authUser.bio}"></h2>
+<h2 th:text="${'Interests: ' + authUser.interests}"></h2>
+<h2 th:text="${'Gender: ' + authUser.gender}"></h2>
+
+
+<h2>ADD POST</h2>
+<form action="/myProfile" method="POST">
+    <textarea name="body" rows="4" cols="150" placeholder="WRITE STUFF HERE"></textarea>
+    <input type="submit" value="ADD POST"/>
+</form>
+
+<h2>User Post</h2>
+<ul th:each="post : ${authUser.listOfPost}">
+    <li th:text="${post.body}"></li>
+</ul>
 </body>
 </html>
