@@ -2,8 +2,10 @@ package com.GITDate.GITDate.controllers;
 
 import com.GITDate.GITDate.models.AppUser;
 import com.GITDate.GITDate.models.Post;
+import com.GITDate.GITDate.models.UserComment;
 import com.GITDate.GITDate.repositories.AppUserRepository;
 
+import com.GITDate.GITDate.repositories.CommentRepository;
 import com.GITDate.GITDate.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,16 +19,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.stream.events.Comment;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class PostController {
+public class CommentController {
 
     @Autowired
-    PostRepository postRepository;
+    CommentRepository commentRepository;
 
     @Autowired
     AppUserRepository appUserRepository;
@@ -35,26 +38,26 @@ public class PostController {
     HttpServletRequest request;
 
 
-
-    @PostMapping("/myProfile")
-    public RedirectView createPost(Principal p, String body, Model m) {
+    @PostMapping("/user/{id}")
+    public RedirectView createComment(Principal p, String body, Model m) {
         if(p!=null){
             String username = p.getName();
             AppUser appUser = appUserRepository.findByUsername(username);
-            m.addAttribute("addPost", appUser.getListOfPost());
+            m.addAttribute("addComment", appUser.getListOfComment());
             Date date = new Date();
-            Post newPost = new Post(body, date, appUser);
-            newPost.setCreatedBy(appUser);
-            postRepository.save(newPost);
+            UserComment newComment = new UserComment(body, date, appUser);
+            newComment.setCreatedBy(appUser);
+            commentRepository.save(newComment);
 
         }
-        return new RedirectView("/myProfile");
+        return new RedirectView("/user/{id}");
     }
 
     public void autoAuthWithHttpServletRequest(String username, String password) {
         try {
             request.login(username, password);
         } catch (ServletException se) {
+//            System.out.print("hellohello");
             se.printStackTrace();
         }
     }

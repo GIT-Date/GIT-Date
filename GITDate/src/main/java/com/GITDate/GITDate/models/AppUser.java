@@ -41,6 +41,9 @@ public class AppUser implements UserDetails {
     )
     Set<AppUser> usersILike = new HashSet<>();
 
+    @ManyToMany(mappedBy = "usersILike")
+    Set<AppUser> usersWhoLikeMe = new HashSet<>();
+
     public Set<AppUser> getUsersILike() {
         return usersILike;
     }
@@ -49,18 +52,28 @@ public class AppUser implements UserDetails {
         return usersWhoLikeMe;
     }
 
-    @ManyToMany(mappedBy = "usersILike")
-    Set<AppUser> usersWhoLikeMe = new HashSet<>();
+    public Set<AppUser> setUsersILike() {
+        return usersILike;
+    }
+
+    public Set<AppUser> setUsersWhoLikeMe() {
+        return usersWhoLikeMe;
+    }
 
     @OneToMany(mappedBy = "createdBy")
     Set<Post> listOfPost = new HashSet<>();
-
-    public Set<Post> getListOfPost() {
-        return listOfPost;
-    }
+    public Set<Post> getListOfPost() {return listOfPost;}
     public void setListOfPost(Set<Post> listOfPost) {
         this.listOfPost = listOfPost;
     }
+
+    @OneToMany(mappedBy = "createdBy")
+    Set<UserComment> listOfComment = new HashSet<>();
+    public Set<UserComment> getListOfComment() {return listOfComment;}
+    public void setListOfComment(Set<UserComment> listOfComment) {
+        this.listOfComment = listOfComment;
+    }
+
 
     public AppUser(String username, String password, String firstName, String lastName, Integer age, String bio, String interests, String gender, String image) {
         this.username = username;

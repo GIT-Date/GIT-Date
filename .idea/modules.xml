@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GIT-Date.iml" filepath="$PROJECT_DIR$/.idea/GIT-Date.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GITDate.iml" filepath="$PROJECT_DIR$/.idea/modules/GITDate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GITDate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GITDate.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GITDate.test.iml" filepath="$PROJECT_DIR$/.idea/modules/GITDate.test.iml" />
     </modules>
   </component>
 </project>
