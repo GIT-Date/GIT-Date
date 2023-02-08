@@ -37,7 +37,7 @@ public class AppUser implements UserDetails {
     @JoinTable(
             name = "likes_to_liked",
             joinColumns = {@JoinColumn(name = "userWhoIsLiking")},
-            inverseJoinColumns = {@JoinColumn(name = "LikedUser")}
+            inverseJoinColumns = {@JoinColumn(name = "likedUser")}
     )
     Set<AppUser> usersILike = new HashSet<>();
 
