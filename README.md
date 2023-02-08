@@ -7,6 +7,8 @@
 | [Wireframe](https://github.com/GIT-Date/GIT-Date#wireframe) |
 | [Database](https://github.com/GIT-Date/GIT-Date#data-base) |
 | [Schema](https://github.com/GIT-Date/GIT-Date#schema) |
+| [WRRC](https://github.com/GIT-Date/GIT-Date/blob/staging/README.md#wrrc) |
+| [Routes](https://github.com/GIT-Date/GIT-Date/blob/staging/README.md#routes) |
 
 # Collaborators
 
