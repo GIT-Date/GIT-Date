@@ -49,11 +49,11 @@ public class LikesController {
         m.addAttribute("usersILike", viewUser.getUsersILike());
         m.addAttribute("usersWhoLikeMe", viewUser.getUsersWhoLikeMe());
 
-        return "like-user.html";
+        return "likes.html";
     }
 
 
-    @PutMapping("/like-user/{id}")
+    @PutMapping("/likes/{id}")
     public RedirectView likeUser(Principal p, @PathVariable Long id) throws IllegalAccessException {
         AppUser userILike = appUserRepository.findById(id).orElseThrow(() -> new RuntimeException("Error Reading User From The Database with ID of: " + id));
         AppUser browsingUser = appUserRepository.findByUsername(p.getName());

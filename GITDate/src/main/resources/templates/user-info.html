@@ -16,7 +16,7 @@
     <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>
     <h2 th:text="${'Gender: ' + viewUser.gender}"></h2>
 
-<form th:action="${'/like-user/' + viewUser.id}" th:method="PUT">
+<form th:action="${'/likes/' + viewUser.id}" th:method="PUT">
     <input type="hidden" th:value="${viewUser.username}">
     <input type="submit" value="Like User" th:hidden="${viewUser.username.equals(authUser.username)}">
 </form>

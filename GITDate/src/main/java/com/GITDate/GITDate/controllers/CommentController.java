@@ -23,7 +23,10 @@ import javax.xml.stream.events.Comment;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class CommentController {
@@ -39,14 +42,35 @@ public class CommentController {
 
 
     @PostMapping("/user/{id}")
-    public RedirectView createComment(Principal p, String body, Model m) {
+    public RedirectView createComment(@PathVariable Long id, Principal p, String body, Model m) {
         if(p!=null){
             String username = p.getName();
-            AppUser appUser = appUserRepository.findByUsername(username);
-            m.addAttribute("addComment", appUser.getListOfComment());
+            AppUser viewingUser = appUserRepository.findById(id).orElseThrow();;
+            List<UserComment> userCommentList = new ArrayList<>(viewingUser.getListOfComment());
+            userCommentList.sort((a,b) -> {
+                Calendar calA = Calendar.getInstance();
+                int hourA = calA.get(Calendar.HOUR_OF_DAY);
+                int minuteA = calA.get(Calendar.MINUTE);
+                int secondA = calA.get(Calendar.SECOND);
+
+                Calendar calB = Calendar.getInstance();
+                int hourB = calB.get(Calendar.HOUR_OF_DAY);
+                int minuteB = calB.get(Calendar.MINUTE);
+                int secondB = calB.get(Calendar.SECOND);
+
+                if(hourA != hourB){
+                    return Integer.compare(hourA, hourB);
+                }
+                else if (minuteA != minuteB){
+                    return Integer.compare(minuteA, minuteB);
+                }else{
+                    return Integer.compare(secondA, secondB);
+                }
+            });
+            m.addAttribute("addComment", userCommentList);
             Date date = new Date();
-            UserComment newComment = new UserComment(body, date, appUser);
-            newComment.setCreatedBy(appUser);
+            UserComment newComment = new UserComment(body, date, viewingUser);
+            newComment.setCreatedBy(viewingUser);
             commentRepository.save(newComment);
 
         }
