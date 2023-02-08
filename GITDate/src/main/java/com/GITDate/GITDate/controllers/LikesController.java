@@ -16,6 +16,8 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -43,10 +45,11 @@ public class LikesController {
         Long viewUserId = viewUser.getId();
         String viewUserName = viewUser.getUsername();
         String viewUserFirstName = viewUser.getFirstName();
+        Object[] userILike = viewUser.getUsersILike().toArray();
         m.addAttribute("viewUserFirstName", viewUserFirstName);
         m.addAttribute("viewUserName", viewUserName);
         m.addAttribute("viewUserId", viewUserId);
-        m.addAttribute("usersILike", viewUser.getUsersILike());
+        m.addAttribute("usersILike", userILike);
         m.addAttribute("usersWhoLikeMe", viewUser.getUsersWhoLikeMe());
 
         return "likes.html";
@@ -54,14 +57,15 @@ public class LikesController {
 
 
     @PutMapping("/likes/{id}")
-    public RedirectView likeUser(Principal p, @PathVariable Long id) throws IllegalAccessException {
-        AppUser userILike = appUserRepository.findById(id).orElseThrow(() -> new RuntimeException("Error Reading User From The Database with ID of: " + id));
+    public RedirectView likedUser(Principal p, @PathVariable Long id) throws IllegalAccessException {
+        AppUser usersILike = appUserRepository.findById(id).orElseThrow(() -> new RuntimeException("Error Reading User From The Database with ID of: " + id));
         AppUser browsingUser = appUserRepository.findByUsername(p.getName());
-        if (browsingUser.getUsername().equals(userILike.getUsername())) {
+        if (browsingUser.getUsername().equals(usersILike.getUsername())) {
             throw new IllegalAccessException("Don't Like Yourself!");
         }
 
-        browsingUser.getUsersILike().add(userILike);
+        browsingUser.getUsersILike().add(usersILike);
+//        browsingUser.getUsersWhoLikeMe().add(usersWhoLikeMe);
 
         appUserRepository.save(browsingUser);
 

@@ -10,15 +10,15 @@
 <!--    <input type="hidden" th:value="${viewUsername}">-->
 <!--    <input type="submit" value="Like User" th:disabled="${authUserName.equals(viewUserName)}">-->
 <!--</form>-->
-
 <h2>Who I Like</h2>
-<ul th:each="likedUser : ${usersIlike}">
+<ul th:each="likedUser : ${usersILike}">
     <li th:text="${likedUser.username}"></li>
 </ul>
 
 <h2>Who likes me</h2>
-<ul th:each="userThatLikes : ${usersWhoLikeMe}">
-    <li th:text="${userThatLikes.username}"></li>
+<ul th:each="userThatLike : ${usersWhoLikeMe}">
+    <li th:text="${userThatLike.username}"></li>
 </ul>
 </body>
 </html>
+
