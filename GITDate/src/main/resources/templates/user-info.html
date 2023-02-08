@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User PAge</title>
+    <title>User Page</title>
 </head>
 <body>
 
-<!--<div th:replace="/fragments/nav-header :: h3"></div>-->
-<!--<div th:replace="/fragments/nav-header :: auth-user"></div>-->
-<!--<div th:replace="/fragments/nav-header :: list-frag"></div>-->
+<img src="https://via.placeholder.com/150 "/>
 
-<!--<div th:replace="/fragments/error-frag :: user-error"></div>-->
+    <h2 th:text="${'Username: ' + viewUser.username}"></h2>
+    <h2 th:text="${'First Name: ' + viewUser.firstName}"></h2>
+    <h2 th:text="${'Last Name: ' + viewUser.lastName}"></h2>
+    <h2 th:text="${'Age: ' + viewUser.age}"></h2>
+    <h2 th:text="${'Bio: ' + viewUser.bio}"></h2>
+    <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>
+    <h2 th:text="${'Gender: ' + viewUser.gender}"></h2>
 
-<h1 th:text="${'User info for user id: ' + viewUser.username}"></h1>
-
-<form th:action="${'/user/' + viewUser.id}" th:method="PUT">
-    <label for="username"> Username</label>
-
-    <input th:value="${viewUser.username}" type="text" name="username"
-           th:disabled="${!authUser.username.equals(viewUser.username)}"/>
-
-    <label for="firstName">First Name</label>
-
-    <input th:value="${viewUser.firstName}" type="text" name="firstName"
-           th:disabled="${!authUser.username.equals(viewUser.username)}"/>
-    <input type="submit" value="Edit User Info"/>
-</form>
-
-<form th:action="${'/liked-user/' + viewUser.id}" th:method="PUT">
+<form th:action="${'/like-user/' + viewUser.id}" th:method="PUT">
     <input type="hidden" th:value="${viewUser.username}">
-    <input type="submit" value="Like User" th:disabled="${authUser.username.equals(viewUser.username)}">
+    <input type="submit" value="Like User" th:hidden="${viewUser.username.equals(authUser.username)}">
 </form>
+
+<h2>User Post</h2>
+<ul th:each="post : ${viewUser.listOfPost}">
+    <li th:text="${post.body}"></li>
+</ul>
+
+<h2>ADD COMMENT</h2>
+<form th:action="${'/user/' + viewUser.id}" th:method="POST">
+    <textarea name="body" rows="4" cols="150" placeholder="COMMENT"></textarea>
+    <input type="submit" value="ADD COMMENT"/>
+</form>
+
+<h2>Visiting User Comment</h2>
+<ul th:each="comment : ${viewUser.listOfComment}">
+    <li th:text="${comment.body}"></li>
+</ul>
+
 </body>
 </html>

@@ -49,7 +49,7 @@ public class LikesController {
         m.addAttribute("usersILike", viewUser.getUsersILike());
         m.addAttribute("usersWhoLikeMe", viewUser.getUsersWhoLikeMe());
 
-        return "likes.html";
+        return "like-user.html";
     }
 
 
@@ -67,6 +67,7 @@ public class LikesController {
 
         return new RedirectView("/likes/" + id);
     }
+
 
     public void autoAuthWithHttpServletRequest(String username, String password) {
         try {

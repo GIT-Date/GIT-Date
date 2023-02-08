@@ -55,7 +55,5 @@ public class Post {
         return createdBy;
     }
 
-    public void setCreatedBy(AppUser createdBy) {
-        this.createdBy = createdBy;
-    }
+    public void setCreatedBy(AppUser createdBy) {this.createdBy = createdBy;}
 }

@@ -7,8 +7,8 @@
 <body>
 
 <h1 th:text="${'Hello, ' + authUser.username + '. Welcome to your profile!'}"></h1>
-<img src="https://via.placeholder.com/150 "/>
 
+<img src="https://via.placeholder.com/150 "/>
 
 <h2 th:text="${'Username: ' + authUser.username}"></h2>
 <h2 th:text="${'First Name: ' + authUser.firstName}"></h2>
@@ -21,7 +21,7 @@
 
 <h2>ADD POST</h2>
 <form action="/myProfile" method="POST">
-    <textarea name="body" rows="4" cols="150" placeholder="WRITE STUFF HERE"></textarea>
+    <textarea name="body" rows="4" cols="150" placeholder="POST"></textarea>
     <input type="submit" value="ADD POST"/>
 </form>
 
@@ -29,5 +29,17 @@
 <ul th:each="post : ${authUser.listOfPost}">
     <li th:text="${post.body}"></li>
 </ul>
+
+<!--<h2>ADD COMMENT</h2>-->
+<!--<form action="/myProfile" method="POST">-->
+<!--    <textarea name="body" rows="4" cols="150" placeholder="COMMENT"></textarea>-->
+<!--    <input type="submit" value="ADD COMMENT"/>-->
+<!--</form>-->
+
+<h2>Visiting User Comment</h2>
+<ul th:each="comment : ${authUser.listOfComment}">
+    <li th:text="${comment.body}"></li>
+</ul>
+
 </body>
 </html>
