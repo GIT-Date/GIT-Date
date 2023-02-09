@@ -41,8 +41,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
                     // REQUEST SECTION
                     .authorizeRequests()
                     .antMatchers("/", "/login", "/signup", "/css/**", "/img/**").permitAll()
+
                     .anyRequest().authenticated()
-                    .and() // Seperator
+                    .and() // Separator
                     // Login Section
                     .formLogin()
                     .loginPage("/login")

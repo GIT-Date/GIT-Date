@@ -31,7 +31,7 @@ public class AppUser implements UserDetails {
 
     private String image;
 
-    protected AppUser() {
+    public AppUser() {
     }
     @ManyToMany
     @JoinTable(

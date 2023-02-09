@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>All Users</title>
 </head>
 <body>
+<div>
+  <div th:each="user : ${viewAllUsers}">
+    <img src="https://via.placeholder.com/150">
+    <div th:text="${'First Name: ' + user.firstName}"></div>
+    <div th:text="${'Age: ' + user.age}"></div>
+    <div th:text="${'Bio: ' + user.bio}"></div>
+  </div>
+</div>
+<p>Hello</p>
+<form action="/search" method="GET">
+  <label>Gender Orientation</label>
+  <input type="text" value="gender"/>
+  <input type="submit" value="filter"/>
+</form>
 
 </body>
 </html>
