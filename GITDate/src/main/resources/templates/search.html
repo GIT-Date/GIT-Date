@@ -14,9 +14,9 @@
   </div>
 </div>
 <p>Hello</p>
-<form action="/search" method="GET">
+<form th:action="${'/search/results'}" method="GET">
   <label>Gender Orientation</label>
-  <input type="text" value="gender"/>
+  <input name=key type="text" th:value="${key}"/>
   <input type="submit" value="filter"/>
 </form>
 

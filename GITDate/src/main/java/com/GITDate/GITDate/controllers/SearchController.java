@@ -23,8 +23,8 @@ public class SearchController {
 
 //make get mapping to search
 
-    @GetMapping("/search/{key}")
-    public String getFilteredAppUser(Model m, Principal p, @PathVariable String key) {
+    @GetMapping("/search/results")
+    public String getFilteredAppUser(Model m, Principal p, String key) {
         AppUser authenticateUser = appUserRepository.findByUsername(p.getName());
         String authUserName = authenticateUser.getUsername();
         m.addAttribute("authUserName", authUserName);
@@ -37,20 +37,19 @@ public class SearchController {
                 }
                 //search through users, if gender matches key save to final list
                 //if user gender matches key push to list, else filter to next user
-
-
             }
 //        String viewUserByInterests = appUserRepository.findByInterests();
 //        Integer viewUserByAge = appUserRepository.findByAge();
         m.addAttribute("viewAllUsers", filteredUsers);
 //        m.addAttribute("viewAllUsersByInterests", viewUserByInterests);
 //        m.addAttribute("viewAllUsersByAge", viewUserByAge);
-
         return "search";
     }
 
     @GetMapping("/search")
     public String getAllUsers(Model m){
+        String key = "";
+        m.addAttribute("key", key);
         List<AppUser> viewAllUsers = appUserRepository.findAll();
         m.addAttribute("viewAllUsers", viewAllUsers);
         return "search";
