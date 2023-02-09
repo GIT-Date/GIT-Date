@@ -5,7 +5,7 @@
     <title>User Page</title>
 </head>
 <body>
-
+<div  th:hidden=${!authUser} th:replace="/fragments/nav-header:: list-frag"></div>
 <img src="https://via.placeholder.com/150 "/>
 
     <h2 th:text="${'Username: ' + viewUser.username}"></h2>

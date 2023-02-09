@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<h1>Let's GIT you a date &#128151</h1>
+<div  th:replace="/fragments/nav-header:: list-frag"></div>
 
-<h3 th:if="${username}" th:text="${'Hello ' + FirstName}"></h3>
-<a th:if="${username}" href="/logout">Logout</a>
-<a th:if="!${username}" href="/login">Log In</a>
-<br>
-<a th:if="!${username}" href="/signup">Sign Up</a>
+<h1 id="indexTitle">Let's GIT you a date &#128151</h1>
 
+<img id="gitDateLogo" src="img/gitDate.png" alt="gitDateLogo" style="width:200px;height:auto">
+
+<div id="indexContainer">
+<div id="leftCard">
+    <img src="img/indexLeft.jpg" alt="indexLeft" style="width:500px;height:auto">
+</div>
+
+<h3 th:if="${username}" th:text="${'Hello, you are logged in as ' + FirstName}"></h3>
+<a class="button" id="logoutButton" th:if="${username}" href="/logout">Logout</a>
+<a class="button" id="loginButton" th:if="!${username}" href="/login">Log In</a>
+<a class="button" id="signupButton" th:if="!${username}" href="/signup">Sign Up</a>
+
+<div id="rightCard">
+    <img src="img/indexRight.jpg" alt="indexRight" style="width:500px;height:auto">
+</div>
+
+    <div id="squares">
+        <div id="square1"></div>
+        <div id="square2"></div>
+    </div>
+
+</div>
 </body>
 </html>

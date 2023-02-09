@@ -43,7 +43,9 @@ public class SearchController {
         m.addAttribute("viewAllUsers", filteredUsers);
 //        m.addAttribute("viewAllUsersByInterests", viewUserByInterests);
 //        m.addAttribute("viewAllUsersByAge", viewUserByAge);
+
         return "search";
+
     }
 
     @GetMapping("/search")
@@ -52,6 +54,7 @@ public class SearchController {
         m.addAttribute("key", key);
         List<AppUser> viewAllUsers = appUserRepository.findAll();
         m.addAttribute("viewAllUsers", viewAllUsers);
-        return "search";
+       
+        return "/search";
     }
 }
