@@ -37,8 +37,6 @@ public class SearchController {
                 }
                 //search through users, if gender matches key save to final list
                 //if user gender matches key push to list, else filter to next user
-
-
             }
 //        String viewUserByInterests = appUserRepository.findByInterests();
 //        Integer viewUserByAge = appUserRepository.findByAge();
@@ -46,15 +44,17 @@ public class SearchController {
 //        m.addAttribute("viewAllUsersByInterests", viewUserByInterests);
 //        m.addAttribute("viewAllUsersByAge", viewUserByAge);
 
-        return "/search";
+        return "search";
+
     }
 
     @GetMapping("/search")
     public String getAllUsers(Model m){
         String key = "";
+        m.addAttribute("key", key);
         List<AppUser> viewAllUsers = appUserRepository.findAll();
         m.addAttribute("viewAllUsers", viewAllUsers);
-        m.addAttribute("", key);
+       
         return "/search";
     }
 }
