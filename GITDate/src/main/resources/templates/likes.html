@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Likes</title>
 </head>
 <body>
-
+<div th:hidden=${!authUser} th:replace="/fragments/nav-header"></div>
 <!--<form th:action="${'/like-user/' + viewUserId}" th:method="PUT">-->
 <!--    <input type="hidden" th:value="${viewUsername}">-->
 <!--    <input type="submit" value="Like User" th:disabled="${authUserName.equals(viewUserName)}">-->

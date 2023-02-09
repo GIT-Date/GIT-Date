@@ -71,9 +71,11 @@ public class AppUserController {
     }
 
     @PostMapping("/signup")
-    public RedirectView createAppUser(String username, String password, String firstName, String lastName, Integer age, String bio, String interests, String gender, String image) throws ParseException {
+    public RedirectView createAppUser(String username, String password, String firstName, String lastName,
+                                      Integer age, String bio, String interests, String gender, String image) throws ParseException {
         String hashedPW = passwordEncoder.encode(password);
-        AppUser newUser = new AppUser(username, hashedPW, firstName, lastName, age, bio, interests, gender, image);
+        AppUser newUser = new AppUser(username, hashedPW, firstName, lastName, age, bio,
+                interests.toLowerCase(), gender.toLowerCase(), image);
         appUserRepository.save(newUser);
         autoAuthWithHttpServletRequest(username, password);
         return new RedirectView("/");
