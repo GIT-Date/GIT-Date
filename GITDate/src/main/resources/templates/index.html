@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<h1>Let's GIT you a date &#128151</h1>
+<h1 id="indexTitle">Let's GIT you a date &#128151</h1>
+
+<div id="indexContainer">
+<div id="topCard">
+    <img src="img/indexTop.jpg" alt="indexTop" style="width:500px;height:auto">
+</div>
 
 <h3 th:if="${username}" th:text="${'Hello ' + FirstName}"></h3>
-<a th:if="${username}" href="/logout">Logout</a>
-<a th:if="!${username}" href="/login">Log In</a>
-<br>
-<a th:if="!${username}" href="/signup">Sign Up</a>
+<a class="button" id="logoutButton" th:if="${username}" href="/logout">Logout</a>
+<a class="button" id="loginButton" th:if="!${username}" href="/login">Log In</a>
+<a class="button" id="signupButton" th:if="!${username}" href="/signup">Sign Up</a>
 
+<div id="midCard">
+    <img src="img/indexMid.jpg" alt="indexMid" style="width:500px;height:auto">
+</div>
+</div>
 </body>
 </html>
