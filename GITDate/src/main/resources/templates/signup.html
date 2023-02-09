@@ -6,74 +6,86 @@
     <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
-<div id="container">
 
-    <h1>Sign Up!</h1>
+<div class="container">
 
-    <form action="/signup" method="POST">
+    <div id="title">Sign Up!</div>
 
-        <div id="signUpInfo">
+    <div class="content">
 
-            <div class="inputBox">
-                <label class="info">Username</label>
-                <input type="text" name="username" placeholder="Username">
-            <div/>
+        <form action="/signup" method="POST">
 
-            <div class="inputBox">
-                <label class="info">Password</label>
-                <input type="password" name="password" placeholder="********">
-                <div/>
+            <div class="signUpInfo">
+
+                <div class="inputBox">
+                    <label class="info">Username</label>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+
+                <div class="inputBox">
+                    <label class="info">Password</label>
+                    <input type="password" name="password" placeholder="********">
+                </div>
 
                 <div class="inputBox">
                     <label class="info">First Name</label>
                     <input type="text" name="firstName" placeholder="First Name">
-                    <div/>
+                </div>
 
-                    <div class="inputBox">
-                        <label class="info">Last Name</label>
-                        <input type="text" name="lastName" placeholder="Last Name">
-                        <div/>
+                <div class="inputBox">
+                    <label class="info">Last Name</label>
+                    <input type="text" name="lastName" placeholder="Last Name">
+                </div>
 
-                        <div class="inputBox">
-                            <label class="info">Age</label>
-                            <input type="text" name="age" placeholder="##" pattern="[0-9]{2}">
-                            <div/>
+                <div class="inputBox">
+                    <label class="info">Age</label>
+                    <input type="text" name="age" placeholder="##" pattern="[0-9]{2}">
+                </div>
 
-                            <div class="inputBox">
-                                <label class="info">Bio</label>
-                                <textarea type="bio" name="bio" placeholder="Type Bio Here" rows="5"
-                                          cols="75"></textarea>
-                                <div/>
+                <div class="inputBox">
+                    <label class="info">Bio</label>
+                    <textarea type="bio" name="bio" placeholder="Type Bio Here" rows="5" cols="75"></textarea>
+                </div>
 
-                                <div class="inputBox">
-                                    <label class="info">Interests</label>
-                                    <input type="text" name="interests" placeholder="Add Interest Here">
-                                    <div/>
+                <div class="inputBox">
+                    <label class="info">A Little About You</label>
+                    <input type="text" name="interests" placeholder="Something You Love">
+                    <input type="text" name="interests" placeholder="Something You Hate">
+                    <input type="text" name="interests" placeholder="Something You Have">
+                    <input type="text" name="interests" placeholder="Something You Want">
+                    <input type="text" name="interests" placeholder="Anything!">
+                </div>
 
 
-                                    <div class="gender">
-                                        <input type="radio" name="gender" id="option1">
-                                        <input type="radio" name="gender" id="option2">
-                                        <input type="radio" name="gender" id="option3">
-                                        <span class="gender__title">Gender</span>
-                                        <div class="category">
-                                            <label for="option1">
-                                                <span class="dot one"></span>
-                                                <span>Male</span>
-                                            </label>
-                                            <label for="option2">
-                                                <span class="dot two"></span>
-                                                <span>Female</span>
-                                            </label>
-                                            <label for="option3">
-                                                <span class="dot three"></span>
-                                                <span>Everyone Else</span>
-                                            </label>
-                                        </div>
+            <div class="gender">
 
-                                        <input type="submit" value="Sign Up">
-                                    </div>
-    </form>
+                <input type="radio" name="Male" id="option-1">
+                <input type="radio" name="Female" id="option-2">
+                <input type="radio" name="Everyone" id="option-3">
+
+                <span class="genderTitle">Who Are You Looking For?</span>
+                <div class="category">
+                    <label for="option-1">
+                        <span class="option 1"></span>
+                        <span>Male</span>
+                    </label>
+                    <label for="option-2">
+                        <span class="option 2"></span>
+                        <span>Female</span>
+                    </label>
+                    <label for="option-3">
+                        <span class="option 3"></span>
+                        <span>Everyone</span>
+                    </label>
+                </div>
+            </div>
+            </div>
+            <div class="button">
+                <input  type="submit" value="Sign Up">
+            </div>
+
+        </form>
+    </div>
 </div>
 </body>
 </html>
