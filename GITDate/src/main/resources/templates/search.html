@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>All Users</title>
 </head>
 <body>
 <div>
+  <div  th:replace="/fragments/nav-header:: list-frag"></div>
+
   <div th:each="user : ${viewAllUsers}">
     <img src="https://via.placeholder.com/150">
     <div th:text="${'First Name: ' + user.firstName}"></div>
@@ -14,9 +16,9 @@
   </div>
 </div>
 <p>Hello</p>
-<form action="/search" method="GET">
+<form th:action="${'/search/results'}" th:method="GET">
   <label>Gender Orientation</label>
-  <input type="text" value="gender"/>
+  <input name=key type="text" th:value="${key}"/>
   <input type="submit" value="filter"/>
 </form>
 
