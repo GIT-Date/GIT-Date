@@ -3,46 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
-<h1>Sign Up!</h1>
-<form action="/signup" method="POST">
-    <label>Username</label>
-    <input type="text" name="username">
+<div id="container">
 
-    <br>
-    <label>Password</label>
-    <input type="password" name="password">
+    <h1>Sign Up!</h1>
 
-    <br>
-    <label>First Name</label>
-    <input type="text" name="firstName">
+    <form action="/signup" method="POST">
 
-    <br>
-    <label>Last Name</label>
-    <input type="text" name="lastName">
+        <div id="signUpInfo">
 
-    <br>
-    <label>Age</label>
-    <input type="text" name="age">
+            <div class="inputBox">
+                <label class="info">Username</label>
+                <input type="text" name="username" placeholder="Username">
+            <div/>
 
-    <br>
-    <label>Bio</label>
-    <input type="bio" name="bio">
+            <div class="inputBox">
+                <label class="info">Password</label>
+                <input type="password" name="password" placeholder="********">
+                <div/>
 
-    <br>
-    <label>Interests</label>
-    <input type="text" name="interests">
+                <div class="inputBox">
+                    <label class="info">First Name</label>
+                    <input type="text" name="firstName" placeholder="First Name">
+                    <div/>
 
-    <br>
-    <label>Gender</label>
-    <input type="text" name="gender">
+                    <div class="inputBox">
+                        <label class="info">Last Name</label>
+                        <input type="text" name="lastName" placeholder="Last Name">
+                        <div/>
 
-    <br>
-    <label>Profile Image</label>
-    <input type="text" name="image">
+                        <div class="inputBox">
+                            <label class="info">Age</label>
+                            <input type="text" name="age" placeholder="##" pattern="[0-9]{2}">
+                            <div/>
 
-    <input type="submit" value="Sign Up">
-</form>
+                            <div class="inputBox">
+                                <label class="info">Bio</label>
+                                <textarea type="bio" name="bio" placeholder="Type Bio Here" rows="5"
+                                          cols="75"></textarea>
+                                <div/>
+
+                                <div class="inputBox">
+                                    <label class="info">Interests</label>
+                                    <input type="text" name="interests" placeholder="Add Interest Here">
+                                    <div/>
+
+
+                                    <div class="gender">
+                                        <input type="radio" name="gender" id="option1">
+                                        <input type="radio" name="gender" id="option2">
+                                        <input type="radio" name="gender" id="option3">
+                                        <span class="gender__title">Gender</span>
+                                        <div class="category">
+                                            <label for="option1">
+                                                <span class="dot one"></span>
+                                                <span>Male</span>
+                                            </label>
+                                            <label for="option2">
+                                                <span class="dot two"></span>
+                                                <span>Female</span>
+                                            </label>
+                                            <label for="option3">
+                                                <span class="dot three"></span>
+                                                <span>Everyone Else</span>
+                                            </label>
+                                        </div>
+
+                                        <input type="submit" value="Sign Up">
+                                    </div>
+    </form>
+</div>
 </body>
 </html>
