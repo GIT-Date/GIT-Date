@@ -40,7 +40,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
                     .csrf().disable()
                     // REQUEST SECTION
                     .authorizeRequests()
-                    .antMatchers("/", "/login", "/signup", "/css/**", "/search").permitAll()
+                    .antMatchers("/", "/login", "/signup", "/css/**", "/img/**").permitAll()
+
                     .anyRequest().authenticated()
                     .and() // Separator
                     // Login Section
