@@ -320,3 +320,19 @@ Ease of use
 
 ## Routes
 <img width="630" alt="Screenshot 2023-02-08 at 11 04 38 AM" src="https://user-images.githubusercontent.com/115438182/217627753-9cbf5d59-7e58-4e22-b0cd-e7a4b811d8d7.png">
+
+# Tutorial
+
+- Create PgAdmin4 account
+
+- Have IntelliJ downloaded
+
+- Go to [Git Date Repo](https://github.com/GIT-Date/GIT-Date)
+
+- Clone Repo to you local computer
+
+-  Make changes to the application properties to add your password
+
+- Press the green play to open up localhost:8080
+
+- Enjoy!  
