@@ -140,7 +140,7 @@
 <div id="postBlock">
 <h2 id="userPostTitle"></h2>
 <ul  th:each="post : ${authUser.listOfPost}">
-    <li th:text="${post.body}"></li>
+    <li id="individualPost" th:text="${post.body}"></li>
 <form th:action="${'/myProfile/' + post.id}" th:method="DELETE">
     <input id="deleteButton" type="submit" value="DELETE"/>
 </form>
@@ -149,7 +149,7 @@
 <div id="commentBlock">
 <h2 id="commentPostTitle">Visiting User Comment</h2>
 <ul th:each="comment : ${authUser.listOfComment}">
-    <li th:text="${comment.body}"></li>
+    <li id="individualComment" th:text="${comment.body}"></li>
 </ul>
 </div>
 <footer>

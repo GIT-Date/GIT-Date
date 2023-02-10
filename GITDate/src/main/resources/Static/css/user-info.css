@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 /*body {
     display: flex;
@@ -19,6 +20,7 @@ body {
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
   height: 100vh;
+
 }
 
 @keyframes gradient {
@@ -146,8 +148,7 @@ top: 150px;
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 1.25rem;
-  font-family: 'Lato', sans-serif;
-
+font-family: 'Abel', sans-serif;
 }
 
 * {
@@ -204,7 +205,6 @@ ol, li {
   flex: 0 0 100%;
   width: 100%;
   background-color: rgba(255,255,255,0.3);
-  /*counter-increment: item;*/
 }
 
 .carousel__slide:nth-child(even) {
@@ -212,7 +212,6 @@ ol, li {
 }
 
 .carousel__slide:before {
- /* content: counter(item);*/
   position: absolute;
   top: 50%;
   left: 50%;
@@ -327,34 +326,44 @@ top:-50px
   border-radius: 10px;
   box-shadow: 0 50px 50px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
+      -webkit-text-stroke: .1px white;
 }
 
 #slideOneTitle{
 text-align:center;
 font-size:50px;
+    font-family: 'Abel', sans-serif;
+     -webkit-text-stroke: .2px white;
 }
 
 #slideOne{
 left:50px;
 position:relative;
 padding:1em;
+    font-family: 'Abel', sans-serif;
 }
 
 #slideTwoTitle{
 text-align:center;
+    font-family: 'Abel', sans-serif;
 font-size:50px;
+ -webkit-text-stroke: .2px white;
 }
+
 
 #slideTwo{
 left:50px;
 position:relative;
 padding:1em;
 line-height:2;
+    font-family: 'Abel', sans-serif;
 }
 
 #slideThreeTitle{
 text-align:center;
 font-size:50px;
+    font-family: 'Abel', sans-serif;
+    -webkit-text-stroke: .2px white;
 }
 
 #slideThree{
@@ -362,6 +371,7 @@ left:50px;
 position:relative;
 padding:1em;
 line-height:2;
+    font-family: 'Abel', sans-serif;
 }
 
 #addPostTitle{
@@ -369,10 +379,14 @@ font-size:40px;
 position:relative;
 left:300px;
 bottom:-30px;
+    font-family: 'Abel', sans-serif;
+    -webkit-text-stroke: .2px white;
 }
 
 #userPostTitle{
 font-size:40px;
+    font-family: 'Abel', sans-serif;
+    -webkit-text-stroke: .2px white;
 }
 
 #postBlock{
@@ -393,10 +407,15 @@ font-size:40px;
   border-radius: 10px;
   box-shadow: 0 50px 50px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
+       font-family: 'Abel', sans-serif;
+             -webkit-text-stroke: .1px white;
+             font-size:25px;
   }
 
 #commentPostTitle{
 font-size:40px;
+font-family: 'Abel', sans-serif;
+-webkit-text-stroke: .2px white;
 }
 
 #commentBlock{
@@ -411,28 +430,34 @@ font-size:40px;
     box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
     z-index:-1;
-
+font-family: 'Abel', sans-serif;
   border: 10px solid rgba(255,255,255,0.6);;
   border-radius: 10px;
   box-shadow: 0 50px 50px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
+         -webkit-text-stroke: .1px white;
+         font-size:25px;
   }
 
   #likeForm{
 position:absolute;
 top:250px;
+    font-family: 'Abel', sans-serif;
   }
 
   #commentTextArea{
 position:absolute;
 bottom:20px;
 left: 90px;
+    font-family: 'Abel', sans-serif;
   }
 
  #postH2{
   font-size:40px;
   bottom:150px;
   position:absolute;
+  font-family: 'Abel', sans-serif;
+  -webkit-text-stroke: .2px white;
   }
 
   #commentH2{
@@ -440,7 +465,9 @@ left: 90px;
 bottom:50px;
 width:300px;
 position:absolute;
+font-family: 'Abel', sans-serif;
 left:190px;
+-webkit-text-stroke: .2px white;
   }
 
     textarea{
@@ -452,13 +479,14 @@ left:190px;
        bottom:5px;
        left:105px;
        position:absolute;
-       z-index:-1;
+    font-family: 'Abel', sans-serif;
     }
 
    #visitorCommentH2{
       font-size:40px;
       bottom:150px;
       position:absolute;
+      font-family: 'Abel', sans-serif;
    }
 
      img{
@@ -470,6 +498,7 @@ left:190px;
 position:absolute;
 bottom:5px;
 left:-15px;
+
 }
 
  input {
