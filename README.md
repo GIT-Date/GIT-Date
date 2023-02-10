@@ -330,7 +330,7 @@ Ease of use
 
 - Go to [Git Date Repo](https://github.com/GIT-Date/GIT-Date)
 
-- Clone Repo to you local computer
+- Clone Repo to you local computer and idea . in the terminal 
 
 -  Make changes to the application properties to add your password
 
