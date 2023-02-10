@@ -9,6 +9,7 @@
 | [Schema](https://github.com/GIT-Date/GIT-Date#schema) |
 | [WRRC](https://github.com/GIT-Date/GIT-Date/blob/staging/README.md#wrrc) |
 | [Routes](https://github.com/GIT-Date/GIT-Date/blob/staging/README.md#routes) |
+| [Tutorial](https://github.com/GIT-Date/GIT-Date#tutorial) |
 
 # Collaborators
 
