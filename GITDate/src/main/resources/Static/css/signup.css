@@ -17,6 +17,11 @@ body {
   }
 }
 
+img{
+    position:relative;
+    top:-100px;
+}
+
 #title {
   font-size: 40px;
   font-weight: 800;
@@ -97,7 +102,6 @@ label{
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: ;
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
