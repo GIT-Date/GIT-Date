@@ -55,25 +55,24 @@ public class LikesController {
         return "likes.html";
     }
 
-
-    @GetMapping("/likes/{id}")
-    public String getOneAppUser(@PathVariable Long id, Model m, Principal p) {
+    @GetMapping("/likes")
+    public String getOneAppUser(Model m, Principal p) {
         AppUser authenticateUser = appUserRepository.findByUsername(p.getName());
         String authUserName = authenticateUser.getUsername();
         m.addAttribute("authUserName", authUserName);
-        AppUser viewUser = appUserRepository.findById(id).orElseThrow();
-        Long viewUserId = viewUser.getId();
-        String viewUserName = viewUser.getUsername();
-        String viewUserFirstName = viewUser.getFirstName();
-        Object[] userILike = viewUser.getUsersILike().toArray();
+        Long viewUserId = authenticateUser.getId();
+        String viewUserName = authenticateUser.getUsername();
+        String viewUserFirstName = authenticateUser.getFirstName();
+        Object[] userILike = authenticateUser.getUsersILike().toArray();
         m.addAttribute("viewUserFirstName", viewUserFirstName);
         m.addAttribute("viewUserName", viewUserName);
         m.addAttribute("viewUserId", viewUserId);
         m.addAttribute("usersILike", userILike);
-        m.addAttribute("usersWhoLikeMe", viewUser.getUsersWhoLikeMe());
+        m.addAttribute("usersWhoLikeMe", authenticateUser.getUsersWhoLikeMe());
 
         return "likes.html";
     }
+
 
 
 
