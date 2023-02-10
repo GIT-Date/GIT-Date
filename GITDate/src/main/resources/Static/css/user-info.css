@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#myCarousel {
+    height: 1500px;
+    width: 750px;
+    margin: 150px;
+    background-color: yellow;
+}
 
 
 body {
@@ -75,3 +89,4 @@ position:fixed;
   height: 1rem;
   color:white;
 }
+
