@@ -75,7 +75,7 @@ public class AppUserController {
                                       Integer age, String bio, String interests, String gender, String image) throws ParseException {
         String hashedPW = passwordEncoder.encode(password);
         AppUser newUser = new AppUser(username, hashedPW, firstName, lastName, age, bio,
-                interests.toLowerCase(), gender.toLowerCase(), image);
+                interests.toLowerCase(), gender, image);
         appUserRepository.save(newUser);
         autoAuthWithHttpServletRequest(username, password);
         return new RedirectView("/");

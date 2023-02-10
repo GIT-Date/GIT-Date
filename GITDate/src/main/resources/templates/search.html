@@ -32,18 +32,14 @@
     <form th:action="${'/likes/' + user.id}" th:method="PUT">
       <input type="submit" value="Like User">
     </form>
-    <form th:action="${'/user'}" method="GET">
+    <form th:action="${'/user/' + user.id}" method="GET">
       <input type="submit" value="Visit User Profile"/>
     </form>
   </div>
 </div>
 
 
-<form th:action="${'/search/results'}" method="GET">
-  <label>Gender Orientation</label>
-  <input name=key type="text" th:value="${key}"/>
-  <input type="submit" value="filter"/>
-</form>
+
 <footer>
   <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
 </footer>
