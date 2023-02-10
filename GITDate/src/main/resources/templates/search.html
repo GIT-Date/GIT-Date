@@ -13,32 +13,92 @@
 
 <img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
 
-<div>
-
 <form th:action="${'/search/results'}" method="GET">
-<p>Filter Users Here</p>
+  <p id="filterTitle">Filter Users Here</p>
 
-  <label>Gender Orientation</label>
-  <input name=key type="text" th:value="${key}"/>
-  <input type="submit" value="filter"/>
+  <label id="genderOrientationTitle">Gender Orientation</label>
+  <input id="filterTextBox" name=key type="text" th:value="${key}"/>
+  <input id="filterButton" type="submit" value="Filter"/>
 </form>
 
-
-  <div th:each="user : ${viewAllUsers}">
-    <img src="https://via.placeholder.com/150">
-    <div th:text="${'First Name: ' + user.firstName}"></div>
-    <div th:text="${'Age: ' + user.age}"></div>
-    <div th:text="${'Bio: ' + user.bio}"></div>
-    <form th:action="${'/likes/' + user.id}" th:method="PUT">
-      <input type="submit" value="Like User">
-    </form>
-    <form th:action="${'/user/' + user.id}" method="GET">
-      <input type="submit" value="Visit User Profile"/>
-    </form>
-  </div>
+<div class="carouselContainer">
+  <section class="carousel" aria-label="Gallery">
+    <ol class="carousel__viewport">
+      <li id="carousel__slide1"
+          tabindex="0"
+          class="carousel__slide">
+        <div class="carousel__snapper">
+          <div th:each="user : ${viewAllUsers}">
+            <img src="https://via.placeholder.com/150">
+            <div th:text="${'First Name: ' + user.firstName}"></div>
+            <div th:text="${'Age: ' + user.age}"></div>
+            <div th:text="${'Bio: ' + user.bio}"></div>
+            <form th:action="${'/likes/' + user.id}" th:method="PUT">
+              <input type="submit" value="Like User">
+            </form>
+            <form th:action="${'/user/' + user.id}" method="GET">
+              <input type="submit" value="Visit User Profile"/>
+            </form>
+          </div>
+          <a href="#carousel__slide4"
+             class="carousel__prev">Go to last slide</a>
+          <a href="#carousel__slide2"
+             class="carousel__next">Go to next slide</a>
+        </div>
+      </li>
+      <li id="carousel__slide2"
+          tabindex="0"
+          class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <div th:each="user : ${viewAllUsers}">
+          <img src="https://via.placeholder.com/150">
+          <div th:text="${'First Name: ' + user.firstName}"></div>
+          <div th:text="${'Age: ' + user.age}"></div>
+          <div th:text="${'Bio: ' + user.bio}"></div>
+          <form th:action="${'/likes/' + user.id}" th:method="PUT">
+            <input type="submit" value="Like User">
+          </form>
+          <form th:action="${'/user/' + user.id}" method="GET">
+            <input type="submit" value="Visit User Profile"/>
+          </form>
+        </div>
+        <a href="#carousel__slide1"
+           class="carousel__prev">Go to previous slide</a>
+        <a href="#carousel__slide3"
+           class="carousel__next">Go to next slide</a>
+      </li>
+      <li id="carousel__slide3"
+          tabindex="0"
+          class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <a href="#carousel__slide2"
+           class="carousel__prev">Go to previous slide</a>
+        <a href="#carousel__slide4"
+           class="carousel__next">Go to next slide</a>
+      </li>
+    </ol>
+    <aside class="carousel__navigation">
+      <ol class="carousel__navigation-list">
+        <li class="carousel__navigation-item">
+          <a href="#carousel__slide1"
+             class="carousel__navigation-button"></a>
+        </li>
+        <li class="carousel__navigation-item">
+          <a href="#carousel__slide2"
+             class="carousel__navigation-button"></a>
+        </li>
+        <li class="carousel__navigation-item">
+          <a href="#carousel__slide3"
+             class="carousel__navigation-button"></a>
+        </li>
+        <li class="carousel__navigation-item">
+          <a href="#carousel__slide4"
+             class="carousel__navigation-button"></a>
+        </li>
+      </ol>
+    </aside>
+  </section>
 </div>
-
-
 
 <footer>
   <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
