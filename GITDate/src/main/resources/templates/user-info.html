@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/user-info.css">
-    <!-- Bootstrap CSS -->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
-    <!-- Bootstrap JavaScript -->
-<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>-->
-<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
     <title>User Page</title>
     <link rel="stylesheet" href="/css/user-info.css">
 </head>
@@ -18,51 +12,10 @@
     <div  th:replace="/fragments/nav-header:: list-frag"></div>
 </header>
 
-<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
+<img id="gitDateLogo" src="/img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
 
 <img src="https://via.placeholder.com/150 "/>
 
-<!--<div id="myCarousel" class="carousel slide" data-ride="carousel">-->
-<!--    &lt;!&ndash; Indicators &ndash;&gt;-->
-<!--    <ol class="carousel-indicators">-->
-<!--        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-<!--        <li data-target="#myCarousel" data-slide-to="1"></li>-->
-<!--        <li data-target="#myCarousel" data-slide-to="2"></li>-->
-<!--    </ol>-->
-<!--    &lt;!&ndash; Slides &ndash;&gt;-->
-<!--    <div class="carousel-inner" style="color: black;">-->
-<!--        <div class="carousel-item active" style="color: black;">-->
-<!--            <img src="https://via.placeholder.com/250"/>-->
-<!--            <div class="carousel-caption" style="color: black;">-->
-<!--                <h2 style="color: black; font-size: large; font-weight: bold;"  th:text="${'Username: ' + viewUser.username}"></h2>-->
-<!--                <h2 th:text="${viewUser.firstName + ' ' + viewUser.lastName}" ></h2>-->
-<!--                <h2 th:text="${viewUser.age}"></h2>-->
-<!--                <h2 th:text="${viewUser.gender}"></h2>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="carousel-item" style="color:red;" >-->
-<!--            <img src="https://via.placeholder.com/250"/>-->
-<!--            <div class="carousel-caption" style="color: black">-->
-<!--                <h2 th:text="${'Bio: ' + viewUser.bio}"></h2>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="carousel-item" style="color:red;">-->
-<!--            <img src="https://via.placeholder.com/250"/>-->
-<!--            <div class="carousel-caption" style="color: black">-->
-<!--                <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Controls &ndash;&gt;-->
-<!--    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
-<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--        <span class="visually-hidden">Previous</span>-->
-<!--    </a>-->
-<!--    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
-<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--        <span class="visually-hidden">Next</span>-->
-<!--    </a>-->
-<!--</div>-->
 
 <div class="carouselContainer">
     <section class="carousel" aria-label="Gallery">
@@ -126,7 +79,7 @@
         </aside>
     </section>
 </div>
-<form th:action="${'/user/' + authUser.id}" th:method="PUT">
+<form id="editForm" th:action="${'/user/' + authUser.id}" th:method="PUT">
     <label for="username">Username</label>
     <input type="text" name="username" th:disabled="${!viewUser.username.equals(authUser.username)}"/>
     <input type="submit" value="Edit User Info"/>

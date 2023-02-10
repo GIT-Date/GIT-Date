@@ -35,8 +35,6 @@ public class SearchController {
                 if (user.getGender().equals(key)){
                     filteredUsers.add(user);
                 }
-                //search through users, if gender matches key save to final list
-                //if user gender matches key push to list, else filter to next user
             }
 
         m.addAttribute("viewAllUsers", filteredUsers);
