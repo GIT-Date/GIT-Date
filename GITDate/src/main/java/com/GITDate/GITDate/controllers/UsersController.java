@@ -38,14 +38,12 @@ public class UsersController {
         return "user-info.html";
     }
     @PutMapping("/user/{id}")
-    public RedirectView editAppUserInfo(@PathVariable Long id, String username, String firstName, String lastName, Principal p, RedirectAttributes redir) throws ServletException {
+    public RedirectView editAppUserInfo(@PathVariable Long id, String username, Principal p, RedirectAttributes redir) throws ServletException {
         // Find user to edit
         AppUser userToBeEdited = appUserRepository.findById(id).orElseThrow();
         if (p.getName().equals(userToBeEdited.getUsername())) {
             // Update user
             userToBeEdited.setUsername(username);
-            userToBeEdited.setFirstName(firstName);
-            userToBeEdited.setLastName(lastName);
             // Save edited user back to db
             appUserRepository.save(userToBeEdited);
             request.logout();
@@ -56,6 +54,7 @@ public class UsersController {
         return new RedirectView("/user/" + id);
 
     }
+
     public void autoAuthWithHttpServletRequest(String username, String password) {
         try {
             request.login(username, password);
