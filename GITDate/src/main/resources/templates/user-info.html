@@ -2,40 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/user-info.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>User Page</title>
 </head>
 <body>
 
 <img src="https://via.placeholder.com/150 "/>
 
-    <h2 th:text="${'Username: ' + viewUser.username}"></h2>
-    <h2 th:text="${'First Name: ' + viewUser.firstName}"></h2>
-    <h2 th:text="${'Last Name: ' + viewUser.lastName}"></h2>
-    <h2 th:text="${'Age: ' + viewUser.age}"></h2>
-    <h2 th:text="${'Bio: ' + viewUser.bio}"></h2>
-    <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>
-    <h2 th:text="${'Gender: ' + viewUser.gender}"></h2>
+<!--    <h2 th:text="${'Username: ' + viewUser.username}"></h2>-->
+<!--    <h2 th:text="${'First Name: ' + viewUser.firstName}"></h2>-->
+<!--    <h2 th:text="${'Last Name: ' + viewUser.lastName}"></h2>-->
+<!--    <h2 th:text="${'Age: ' + viewUser.age}"></h2>-->
+<!--    <h2 th:text="${'Bio: ' + viewUser.bio}"></h2>-->
+<!--    <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>-->
+<!--    <h2 th:text="${'Gender: ' + viewUser.gender}"></h2>-->
 
-<form th:action="${'/likes/' + viewUser.id}" th:method="PUT">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Slides -->
+    <div class="carousel-inner" style="color: black;">
+        <div class="carousel-item active" style="color: black;">
+            <img src="https://via.placeholder.com/250"/>
+            <div class="carousel-caption" style="color: black;">
+                <h2 style="color: black; font-size: large; font-weight: bold;"  th:text="${'Username: ' + viewUser.username}"></h2>
+                <h2 th:text="${viewUser.firstName + ' ' + viewUser.lastName}" ></h2>
+                <h2 th:text="${viewUser.age}"></h2>
+                <h2 th:text="${viewUser.gender}"></h2>
+            </div>
+        </div>
+        <div class="carousel-item" style="color:red;" >
+            <img src="https://via.placeholder.com/250"/>
+            <div class="carousel-caption" style="color: black">
+                <h2 th:text="${'Bio: ' + viewUser.bio}"></h2>
+            </div>
+        </div>
+        <div class="carousel-item" style="color:red;">
+            <img src="https://via.placeholder.com/250"/>
+            <div class="carousel-caption" style="color: black">
+                <h2 th:text="${'Interests: ' + viewUser.interests}"></h2>
+            </div>
+        </div>
+    </div>
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
+<form id="likeForm" th:action="${'/likes/' + viewUser.id}" th:method="PUT">
     <input type="hidden" th:value="${viewUser.username}">
     <input type="submit" value="Like User" th:hidden="${viewUser.username.equals(authUser.username)}">
 </form>
 
-<h2>User Post</h2>
+<h2 id="postH2">User Post</h2>
 <ul th:each="post : ${viewUser.listOfPost}">
     <li th:text="${post.body}"></li>
 </ul>
 
-<h2>ADD COMMENT</h2>
-<form th:action="${'/user/' + viewUser.id}" th:method="POST">
+<h2 id="commentH2">ADD COMMENT</h2>
+<form id="addCommentForm" th:action="${'/user/' + viewUser.id}" th:method="POST">
     <textarea name="body" rows="4" cols="150" placeholder="COMMENT"></textarea>
     <input type="submit" value="ADD COMMENT"/>
 </form>
 
-<h2>Visiting User Comment</h2>
+<h2 id="visitorCommentH2">Visiting User Comment</h2>
 <ul th:each="comment : ${viewUser.listOfComment}">
     <li th:text="${comment.body}"></li>
 </ul>
 
 </body>
 </html>
+
+
+
