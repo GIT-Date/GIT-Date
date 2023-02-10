@@ -61,8 +61,13 @@
         <span class="visually-hidden">Next</span>
     </a>
 </div>
+<form th:action="${'/user/' + authUser.id}" th:method="PUT">
+    <label for="username">Username</label>
+    <input type="text" name="username" th:disabled="${!viewUser.username.equals(authUser.username)}"/>
+    <input type="submit" value="Edit User Info"/>
+</form>
 
-<form id="likeForm" th:action="${'/likes/' + viewUser.id}" th:method="PUT">
+<form id="likeForm" th:action="${'/likes/' + viewUser.id}" th:method="PUT" >
     <input type="hidden" th:value="${viewUser.username}">
     <input type="submit" value="Like User" th:hidden="${viewUser.username.equals(authUser.username)}">
 </form>
@@ -82,6 +87,7 @@
 <ul th:each="comment : ${viewUser.listOfComment}">
     <li th:text="${comment.body}"></li>
 </ul>
+
 
 <footer>
     <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
