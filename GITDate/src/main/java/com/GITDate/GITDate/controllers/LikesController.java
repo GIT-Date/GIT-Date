@@ -65,7 +65,7 @@ public class LikesController {
         }
 
         browsingUser.getUsersILike().add(usersILike);
-//        browsingUser.getUsersWhoLikeMe().add(usersWhoLikeMe);
+
 
         appUserRepository.save(browsingUser);
 

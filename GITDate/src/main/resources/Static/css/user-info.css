@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#myCarousel {
+    height: 1500px;
+    width: 750px;
+    margin: 150px;
+    background-color: yellow;
+}
+
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23cfd5);
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*HEADER CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+header {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+header ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  padding: 18px;
+  font-family: 'Abel', sans-serif;
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+header ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+/*END OF HEADER CSS*/
+
+#gitDateLogo{
+border: 0;
+float:right;
+top:150px;
+position:relative;
+top:-200px;
+}
+
+#footer{
+font-size:10px;
+font-weight:600;
+position:fixed;
+ bottom:0;
+ left:0;
+  width: 100%;
+  height: 1rem;
+  color:white;
+}
+

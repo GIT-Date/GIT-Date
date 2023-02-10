@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>All Users</title>
+  <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
-<div>
+
+<header>
   <div  th:replace="/fragments/nav-header:: list-frag"></div>
+</header>
+
+<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
+
+<div>
 
 <form th:action="${'/search/results'}" method="GET">
 <p>Filter Users Here</p>
@@ -31,6 +38,15 @@
   </div>
 </div>
 
+
+<form th:action="${'/search/results'}" method="GET">
+  <label>Gender Orientation</label>
+  <input name=key type="text" th:value="${key}"/>
+  <input type="submit" value="filter"/>
+</form>
+<footer>
+  <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
+</footer>
 
 </body>
 </html>
