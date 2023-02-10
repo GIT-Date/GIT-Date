@@ -7,6 +7,13 @@
 </head>
 <body>
 
+<header>
+    <div  th:replace="/fragments/nav-header:: list-frag"></div>
+</header>
+
+<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
+
+
 <h2>Who I Like</h2>
 <ul th:each="likedUser : ${usersILike}">
     <li th:text="${likedUser.firstName + likedUser.lastName + ', ' +  likedUser.age}"></li>
@@ -16,6 +23,11 @@
 <ul th:each="userThatLike : ${usersWhoLikeMe}">
     <li th:text="${userThatLike.firstName + userThatLike.lastName + ', ' + userThatLike.age}"></li>
 </ul>
+
+<footer>
+    <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
+</footer>
+
 </body>
 </html>
 

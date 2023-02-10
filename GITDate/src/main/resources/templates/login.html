@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+
+<header>
+    <div  th:replace="/fragments/nav-header:: list-frag"></div>
+</header>
+
+<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
 
 <div class="container">
 
@@ -17,7 +23,10 @@
     <input type="submit" value="Sign in"><br>
 
 </form>
+    </div>
 
-    <div/>
+    <footer>
+        <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
+    </footer>
 </body>
 </html>

@@ -10,10 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>User Page</title>
+    <link rel="stylesheet" href="/css/user-info.css">
 </head>
 <body>
-<div  th:hidden=${!authUser} th:replace="/fragments/nav-header:: list-frag"></div>
-<img src="https://via.placeholder.com/150 "/>
+
+<header>
+    <div  th:replace="/fragments/nav-header:: list-frag"></div>
+</header>
+
+<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -77,6 +82,10 @@
 <ul th:each="comment : ${viewUser.listOfComment}">
     <li th:text="${comment.body}"></li>
 </ul>
+
+<footer>
+    <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
+</footer>
 
 </body>
 </html>
