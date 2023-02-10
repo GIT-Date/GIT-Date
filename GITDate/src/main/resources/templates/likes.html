@@ -7,10 +7,7 @@
 </head>
 <body>
 
-<!--<form th:action="${'/like-user/' + viewUserId}" th:method="PUT">-->
-<!--    <input type="hidden" th:value="${viewUsername}">-->
-<!--    <input type="submit" value="Like User" th:disabled="${authUserName.equals(viewUserName)}">-->
-<!--</form>-->
+
 <h2>Who I Like</h2>
 <ul th:each="likedUser : ${usersILike}">
     <li th:text="${likedUser.firstName + likedUser.lastName + ', ' +  likedUser.age}"></li>

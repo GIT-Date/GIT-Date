@@ -18,30 +18,6 @@ body {
         background-position: 0% 50%;
     }
 }
-/*img {*/
-/*    position: absolute;*/
-/*}*/
-/*#myCarousel {*/
-/*    position: absolute;*/
-/*}*/
-/*#likeForm {*/
-/*    position: absolute;*/
-/*}*/
-/*#postH2 {*/
-/*    position: absolute;*/
-/*}*/
-/*#commentH2 {*/
-/*    position: absolute;*/
-/*}*/
-/*#visitorCommentH2 {*/
-/*    position: absolute;*/
-/*}*/
-/*#addCommentForm {*/
-/*    position: absolute;*/
-/*}*/
-/*#visitorCommentH2 {*/
-/*    position: absolute;*/
-/*}*/
 body {
     display: flex;
     flex-direction: column;

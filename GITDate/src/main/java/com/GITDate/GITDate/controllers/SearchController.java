@@ -40,11 +40,9 @@ public class SearchController {
 
 
             }
-//        String viewUserByInterests = appUserRepository.findByInterests();
-//        Integer viewUserByAge = appUserRepository.findByAge();
+
         m.addAttribute("viewAllUsers", filteredUsers);
-//        m.addAttribute("viewAllUsersByInterests", viewUserByInterests);
-//        m.addAttribute("viewAllUsersByAge", viewUserByAge);
+
 
         return "search";
     }
