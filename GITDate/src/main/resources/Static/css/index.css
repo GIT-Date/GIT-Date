@@ -103,8 +103,8 @@ body {
     border-top: 1px solid rgba(255,255,255,0.3);
     box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
-    left: 550px;
-    top: 300px;
+    left: 430px;
+    top: -100px;
     z-index:-1;
   }
 
@@ -119,18 +119,100 @@ body {
     border-top: 1px solid rgba(255,255,255,0.3);
     box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
-    left: 50px;
-    top: 420px;
+    left: -40px;
+    top: 330px;
   }
+
+    #square3 {
+      height: 200px;
+      width: 150px;
+      position: absolute;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      right: -150px;
+      bottom: -50px;
+    }
+
+    #square4 {
+      height: 75px;
+      width: 200px;
+      position: absolute;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      right: 300px;
+      bottom: 330px;
+      z-index:-1;
+    }
 
   h3 {
   font-family: 'Permanent Marker', cursive;
   text-align: center;
 }
 
+
+/*HEADER CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+header {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+header ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  padding: 18px;
+  font-family: 'Abel', sans-serif;
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+header ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+/*END OF HEADER CSS*/
+
 #gitDateLogo{
-float:right;
 border: 0;
-position: relative;
-top: -100px;
+float:right;
+top:150px;
+position:relative;
+top:-200px;
+}
+
+#footer{
+font-size:10px;
+font-weight:600;
+position:fixed;
+ bottom:0;
+ left:0;
+  width: 100%;
+  height: 1rem;
+  color:white;
 }

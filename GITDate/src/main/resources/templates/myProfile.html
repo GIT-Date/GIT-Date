@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>MY PROFILE</title>
+    <link rel="stylesheet" href="css/myProfile.css">
 </head>
 <body>
-<div th:hidden=${!authUser} th:replace="/fragments/nav-header"></div>
+
+<header>
+    <div  th:replace="/fragments/nav-header:: list-frag"></div>
+</header>
+
+<img id="gitDateLogo" src="img/gitDateLogo.png" alt="gitDateLogo" style="width:150px;height:auto">
+
 <h1 th:text="${'Hello, ' + authUser.username + '. Welcome to your profile!'}"></h1>
 
 <img src="https://via.placeholder.com/150 "/>
@@ -40,6 +47,8 @@
 <ul th:each="comment : ${authUser.listOfComment}">
     <li th:text="${comment.body}"></li>
 </ul>
-
+<footer>
+    <p id="footer">&copy; Sharmarke Nur, Adrian Hernandez, Devon Terry, and Ryan Papsin.</p>
+</footer>
 </body>
 </html>
