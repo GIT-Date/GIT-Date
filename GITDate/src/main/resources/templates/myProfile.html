@@ -21,13 +21,17 @@
 
 <h2>ADD POST</h2>
 <form action="/myProfile" method="POST">
-    <textarea name="body" rows="4" cols="150" placeholder="POST"></textarea>
+    <textarea name="body" rows="4" cols="150" placeholder=""></textarea>
     <input type="submit" value="ADD POST"/>
 </form>
 
+
 <h2>User Post</h2>
-<ul th:each="post : ${authUser.listOfPost}">
+<ul  th:each="post : ${authUser.listOfPost}">
     <li th:text="${post.body}"></li>
+<form th:action="${'/myProfile/' + post.id}" th:method="DELETE">
+    <input type="submit" value="DELETE POST"/>
+</form>
 </ul>
 
 <!--<h2>ADD COMMENT</h2>-->

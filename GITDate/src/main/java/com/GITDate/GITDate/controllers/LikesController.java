@@ -57,7 +57,7 @@ public class LikesController {
 
 
     @PutMapping("/likes/{id}")
-    public RedirectView likedUser(Principal p, @PathVariable Long id) throws IllegalAccessException {
+    public RedirectView likedUser(Principal p, Model m, @PathVariable Long id) throws IllegalAccessException {
         AppUser usersILike = appUserRepository.findById(id).orElseThrow(() -> new RuntimeException("Error Reading User From The Database with ID of: " + id));
         AppUser browsingUser = appUserRepository.findByUsername(p.getName());
         if (browsingUser.getUsername().equals(usersILike.getUsername())) {
@@ -69,7 +69,7 @@ public class LikesController {
 
         appUserRepository.save(browsingUser);
 
-        return new RedirectView("/likes/" + id);
+        return new RedirectView("/likes/" + browsingUser.getId());
     }
 
 

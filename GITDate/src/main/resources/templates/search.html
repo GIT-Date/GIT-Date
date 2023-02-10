@@ -8,20 +8,29 @@
 <div>
   <div  th:replace="/fragments/nav-header:: list-frag"></div>
 
+<form th:action="${'/search/results'}" method="GET">
+<p>Filter Users Here</p>
+
+  <label>Gender Orientation</label>
+  <input name=key type="text" th:value="${key}"/>
+  <input type="submit" value="filter"/>
+</form>
+
+
   <div th:each="user : ${viewAllUsers}">
     <img src="https://via.placeholder.com/150">
     <div th:text="${'First Name: ' + user.firstName}"></div>
     <div th:text="${'Age: ' + user.age}"></div>
     <div th:text="${'Bio: ' + user.bio}"></div>
+    <form th:action="${'/likes/' + user.id}" th:method="PUT">
+      <input type="submit" value="Like User">
+    </form>
+    <form th:action="${'/user'}" method="GET">
+      <input type="submit" value="Visit User Profile"/>
+    </form>
   </div>
 </div>
-<p>Hello</p>
 
-<form th:action="${'/search/results'}" method="GET">
-  <label>Gender Orientation</label>
-  <input name=key type="text" th:value="${key}"/>
-  <input type="submit" value="filter"/>
-</form>
 
 </body>
 </html>

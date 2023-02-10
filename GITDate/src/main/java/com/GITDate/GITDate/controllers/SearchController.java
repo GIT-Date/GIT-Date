@@ -49,11 +49,13 @@ public class SearchController {
     }
 
     @GetMapping("/search")
-    public String getAllUsers(Model m){
-        String key = "";
-        m.addAttribute("key", key);
+    public String getAllUsers(Model m, Principal p){
+
+        AppUser authenticateUser = appUserRepository.findByUsername(p.getName());
+
         List<AppUser> viewAllUsers = appUserRepository.findAll();
         m.addAttribute("viewAllUsers", viewAllUsers);
+        m.addAttribute("browsingUser", authenticateUser);
        
         return "/search";
     }

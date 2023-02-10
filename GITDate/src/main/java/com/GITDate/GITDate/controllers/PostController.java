@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletException;
@@ -47,6 +44,19 @@ public class PostController {
             newPost.setCreatedBy(appUser);
             postRepository.save(newPost);
 
+        }
+        return new RedirectView("/myProfile");
+    }
+
+    @DeleteMapping ("/myProfile/{id}")
+    public RedirectView deletePost(@PathVariable Long id, RedirectAttributes redir,
+                                   Principal p)throws ServletException {
+        Post postToBeDeleted = postRepository.findById(id).orElseThrow();
+        //Grab current user an authenticated user, compare them and if they are auth user continue if not throw
+        if(postToBeDeleted.getCreatedBy().getUsername().equals(p.getName())){
+            postRepository.delete(postToBeDeleted);
+        }else {
+            redir.addFlashAttribute("error", "You can't delete that");
         }
         return new RedirectView("/myProfile");
     }
