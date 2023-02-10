@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletException;
@@ -72,7 +69,8 @@ public class AppUserController {
 
     @PostMapping("/signup")
     public RedirectView createAppUser(String username, String password, String firstName, String lastName,
-                                      Integer age, String bio, String interests, String gender, String image) throws ParseException {
+                                      Integer age, String bio, String interests, @RequestParam("gender") String gender,
+                                      String image) throws ParseException {
         String hashedPW = passwordEncoder.encode(password);
         AppUser newUser = new AppUser(username, hashedPW, firstName, lastName, age, bio,
                 interests.toLowerCase(), gender.toLowerCase(), image);
