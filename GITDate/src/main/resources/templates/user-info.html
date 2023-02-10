@@ -12,7 +12,7 @@
     <title>User Page</title>
 </head>
 <body>
-
+<div  th:hidden=${!authUser} th:replace="/fragments/nav-header:: list-frag"></div>
 <img src="https://via.placeholder.com/150 "/>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
