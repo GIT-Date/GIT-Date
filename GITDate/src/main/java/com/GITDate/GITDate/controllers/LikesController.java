@@ -36,24 +36,25 @@ public class LikesController {
     HttpServletRequest request;
 
 
-    @GetMapping("/likes")
-    public String getOneAppUser(Model m, Principal p) {
+    @GetMapping("/likes/{id}")
+    public String getOneAppUser(@PathVariable Long id, Model m, Principal p) {
         AppUser authenticateUser = appUserRepository.findByUsername(p.getName());
         String authUserName = authenticateUser.getUsername();
         m.addAttribute("authUserName", authUserName);
-//        AppUser viewUser = appUserRepository.findById(id).orElseThrow();
-        Long viewUserId = authenticateUser.getId();
-        String viewUserName = authenticateUser.getUsername();
-        String viewUserFirstName = authenticateUser.getFirstName();
-        Object[] userILike = authenticateUser.getUsersILike().toArray();
+        AppUser viewUser = appUserRepository.findById(id).orElseThrow();
+        Long viewUserId = viewUser.getId();
+        String viewUserName = viewUser.getUsername();
+        String viewUserFirstName = viewUser.getFirstName();
+        Object[] userILike = viewUser.getUsersILike().toArray();
         m.addAttribute("viewUserFirstName", viewUserFirstName);
         m.addAttribute("viewUserName", viewUserName);
         m.addAttribute("viewUserId", viewUserId);
         m.addAttribute("usersILike", userILike);
-        m.addAttribute("usersWhoLikeMe", authenticateUser.getUsersWhoLikeMe());
+        m.addAttribute("usersWhoLikeMe", viewUser.getUsersWhoLikeMe());
 
         return "likes.html";
     }
+
 
     @GetMapping("/likes/{id}")
     public String getOneAppUser(@PathVariable Long id, Model m, Principal p) {
@@ -75,6 +76,7 @@ public class LikesController {
     }
 
 
+
     @PutMapping("/likes/{id}")
     public RedirectView likedUser(Principal p, Model m, @PathVariable Long id) throws IllegalAccessException {
         AppUser usersILike = appUserRepository.findById(id).orElseThrow(() -> new RuntimeException("Error Reading User From The Database with ID of: " + id));
@@ -90,8 +92,6 @@ public class LikesController {
 
         return new RedirectView("/likes/" + browsingUser.getId());
     }
-
-
     public void autoAuthWithHttpServletRequest(String username, String password) {
         try {
             request.login(username, password);
